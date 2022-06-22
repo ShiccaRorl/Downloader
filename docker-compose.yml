@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  tor1:
+    #image: busybox:latest
+    image: ubuntu
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: 'tor01'
+    restart: always
+    ports:
+      - "8118:8118"
+      - "9050:9050"
+    #volumes:
+    #  - ./tor/torrc1/:/etc/tor/torrc/
+    #  - ./tor/tor_hostname1:/var/lib/tor/hidden_service
